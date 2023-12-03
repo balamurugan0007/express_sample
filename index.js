@@ -57,7 +57,7 @@ app.post('/user',(req,res)=>{
 })
 
 app.get("/info",(req,res)=>{
-    Usermodel.find({"age":18}).then((data)=>{
+    Usermodel.find().then((data)=>{
         console.log(data)
         res.send({"data":data})
     }).catch((err)=>{
