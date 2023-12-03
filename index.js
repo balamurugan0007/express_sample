@@ -66,3 +66,15 @@ app.get("/info",(req,res)=>{
     })
 })
 
+app.put("/info",(req,res)=>{
+    var age=req.body.age;
+    var city=req.body.city;
+    var phone=req.body.phone;
+
+    Usermodel.findOneAndUpdate({"name": "kani",},{"age":age,"city":city,"phone":phone})
+    .then((data)=>{
+        res.send(data)
+    }).catch((err)=>{
+        res.send(err)
+    })
+})
